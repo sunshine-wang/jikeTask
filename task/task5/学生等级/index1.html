@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>判断学生等级</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/javascript" href="style.js">
+</head>
+<body>
+<div class="content">
+	<div class="score">
+		<label>请输入学生分数</label>
+		<input type="text" id="text" / >
+	</div>
+	<div class="grade">
+		<label>该学生的等级为</label>
+		<input type="text" id="grade"/>
+	</div>
+	<div class="submit">
+		<input type="submit" onclick="submit()" class="submit-but" value="点我" />
+	</div>
+</div>
+<script type="text/javascript">
+function submit(){
+	var score=document.getElementById('text').value;
+	// var grade=10-parseInt(score/10);
+	switch(true)
+	{
+		case score>=90&&score<=100:
+		grade=1;
+		break;
+		case score>=80&&score<90:
+		grade=2;
+		break;
+		case score>=70&&score<80:
+		grade=3;
+		break;
+		case score>=60&&score<70:
+		grade=4;
+		break;
+		case score>=50&&score<60:
+		grade=5;
+		break;
+		case score>=40&&score<50:
+		grade=6;
+		break;
+		case score>=30&&score<40:
+		grade=7;
+		break;
+		case score>=20&&score<30:
+		grade=8;
+		break;
+		case score>=10&&score<20:
+		grade=9;
+		break;
+		case score>=0&&score<10:
+		grade=10;
+		break;
+	}
+	var txt=document.getElementById('grade');
+	txt.value=grade;
+}
+</script>
+</body>
+</html>

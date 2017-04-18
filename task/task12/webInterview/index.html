@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>高级前端面试题</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="content">
+		<p class="htmlTitle">HTML</p>
+		<div class="module">
+			<p class="module-title">1、页面导入样式时，使用link和@import有什么区别？</p>
+			<ol class="module-body">
+				<li>link属于XHTML标签，除了加载CSS外，还能用于定义RSS, 定义rel连接属性等作用；而@import是CSS提供的，只能用于加载CSS;</li>
+				<li>页面被加载的时，link会同时被加载，而@import引用的CSS会等到页面被加载完再加载;</li>
+				<li>@import是CSS2.1 提出的，只在IE5以上才能被识别，而link是XHTML标签，无兼容问题;</li>
+				<li>link支持用jsvascript改变样式，而@import不行</li>
+			</ol>
+		</div>
+		<div class="module">
+			<p class="module-title">2、简述一下你对HTML语义化的理解？</p>
+			<ol class="module-body">
+				<li>用正确的标签做正确的事情。</li>
+				<li>html语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;</li>
+				<li>即使在没有样式CSS情况下也以一种文档格式显示，并且是容易阅读的;</li>
+				<li>搜索引擎的爬虫也依赖于HTML标记来确定上下文和各个关键字的权重，利于SEO;</li>
+				<li>使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。</li>
+			</ol>
+		</div>
+		<div class="module">
+			<p class="module-title">3、HTML5的离线储存怎么使用，工作原理能不能解释一下？</p>
+			<ol class="module-body">
+				<li>在用户没有与因特网连接时，可以正常访问站点或应用，在用户与因特网连接时，更新用户机器上的缓存文件。
+原理：HTML5的离线存储是基于一个新建的.appcache文件的缓存机制(不是存储技术)，通过这个文件上的解析清单离线存储资源，这些资源就会像cookie一样被存储了下来。之后当网络在处于离线状态下时，浏览器会通过被离线存储的数据进行页面展示。</li>
+			</ol>
+		</div>
+		<div class="module">
+			<p class="module-title">4、浏览器是怎么对HTML5的离线储存资源进行管理和加载的呢？</p>
+			<ol class="module-body">
+				<li>在线情况下，浏览器发现有minifest属性，会加载minifest文件，若是第一次访问app,则会下载minifest文件中相应内容的资源并进行离线存储，若不是第一次访问，则直接使用离线的资源加载页面，然后对比新的minifes文件和就得minifest文件，若是相同，不做处理，否则，重新下载文件中的资源并进行离线存储。</li>
+				<li>离线情况下，直接使用离线资源加载页面。</li>
+			</ol>
+		</div>
+		<div class="module">
+			<p class="module-title">5、请描述一下 cookies，sessionStorage 和 localStorage 的区别？</p>
+			<ol class="module-body">
+				<li>cookie是网站为了标示用户身份而在存储在用户本地终端上的数据，通常会加密。在浏览器和服务器之间传递。</li>
+				<li>localStorage和sessionStorage不会将数据发给服务器，仅在本地保存。</li>
+				<li>cookies数据大小不能超过4k，而sessionStorage和localStorage存储大小比cookie大得多，可以达到5M或更大</li>
+				<li>有期时间：localStorage存储持久数据，浏览器关闭后数据不丢失除非主动删除数据；sessionStorage  数据在当前浏览器窗口关闭后自动删除。cookie     设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭</li>
+			</ol>
+		</div>
+		<div class="module">
+			<p class="module-title">6、iframe有那些缺点?</p>
+			<ol class="module-body">
+				<li>iframe会阻塞主页面的Onload事件</li>
+				<li>搜索引擎的检索程序无法解读这种页面，不利于SEO</li>
+				<li>iframe和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载</li>
+			</ol>
+			<p>使用iframe之前需要考虑这两个缺点。如果需要使用iframe，最好是通过javascript
+动态给iframe添加src属性值，这样可以绕开以上两个问题。</p>
+		</div>
+		<div class="module">
+			<p class="module-title">7、Label的作用是什么？是怎么用的</p>
+			<ol class="module-body">
+				<li>"label标签来定义表单控制间的关系,当用户选择该标签时，浏览器会自动将焦点转到和标签相关的表单控件上。
+
+
+				</li>
+			</ol>
+			<code>
+				<pre>
+				&lt label for="Name"&gtNumber:&lt/label&gt
+				&lt input type=“text“name="Name" id="Name"/&gt
+				&lt label&gtDate:&lt input type="text" name="B"/&gt&lt/label&gt"
+			</pre>
+			</code>
+			
+		</div>
+		<div class="module">
+			<p class="module-title">8、如何实现浏览器内多个标签页之间的通信?</p>
+			<ol class="module-body">
+				<li>WebSocket、SharedWorker；</li>
+				<li>也可以调用localstorge、cookies等本地存储方式；</li>
+				<li>localstorge另一个浏览上下文里被添加、修改或删除时，它都会触发一个事件，
+我们通过监听事件，控制它的值来进行页面信息通信；</li>
+			</ol>
+		</div>
+		<div class="module">
+			<p class="module-title">9、webSocket如何兼容低浏览器？</p>
+			<ol class="module-body">
+				<li>Adobe Flash Socket 、ActiveX HTMLFile (IE) 、基于 multipart 编码发送 XHR 、基于长轮询的 XHR</li>
+			</ol>
+		</div>
+		<div class="module">
+			<p class="module-title">10、页面可见性（Page Visibility API） 可以有哪些用途？</p>
+			<ol class="module-body">
+				<li>通过 visibilityState 的值检测页面当前是否可见，以及打开网页的时间等;</li>
+				<li>在页面被切换到其他后台进程的时候，自动暂停音乐或视频的播放;</li>
+			</ol>
+		</div>
+		<div class="module">
+			<p class="module-title">11、网页验证码是干嘛的，是为了解决什么安全问题？</p>
+			<ol class="module-body">
+				<li>区分用户是计算机还是人的公共全自动程序。可以防止恶意破解密码、刷票、论坛灌水;</li>
+				<li>有效防止黑客对某一个特定注册用户用特定程序暴力破解方式进行不断的登陆尝试;</li>
+			</ol>
+		</div>
+		<p class="cssTitle">css</p>
+		<div class="module-css">
+			<div class="module">
+				<p class="module-title"> 1、介绍一下标准的CSS的盒子模型？低版本IE的盒子模型有什么不同的?</p>
+				<ol class="module-body">
+					<li>有两种， IE 盒子模型、W3C 盒子模型;</li>
+					<li>盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border)</li>
+					<li>区  别： IE的content部分把 border 和 padding计算了进去;</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">2、CSS选择符有哪些？哪些属性可以继承?</p>
+				<ol class="module-body">
+					<li>1).id选择器（ # myid）
+					    2).类选择器（.myclassname）
+					    3).标签选择器（div, h1, p）
+					    4).相邻选择器（h1 + p）
+					    5).子选择器（ul > li）
+					    6).后代选择器（li a）
+					    7).通配符选择器（ * ）
+					    8).属性选择器（a[rel = "external"]）
+					    9).伪类选择器（a:hover, li:nth-child）</li>
+					<li>可继承的样式： font-size font-family color, UL LI DL DD DT</li>
+					<li>不可继承的样式：border padding margin width height;</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">3、请解释一下CSS3的Flexbox（弹性盒布局模型）,以及适用场景？</p>
+				<ol class="module-body">
+					<li>一个用于页面布局的全新CSS3功能，Flexbox可以把列表放在同一个方向（从上到下排列，从左到右），并让列表能延伸到占用可用的空间。较为复杂的布局还可以通过嵌套一个伸缩容器（flex container）来实现。 采用Flex布局的元素，称为Flex容器（flex container），简称"容器"。 它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称"项目"。 常规布局是基于块和内联流方向，而Flex布局是基于flex-flow流可以很方便的用来做局中，能对不同屏幕大小自适应。在布局上有了比以前更加灵活的空间。</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">4、请解释一下CSS3的Flexbox（弹性盒布局模型）,以及适用场景？</p>
+				<ol class="module-body">
+					<li>利用padding-bottom|margin-bottom正负值相抵</li>
+					<li>设置父容器设置超出隐藏（overflow:hidden），这样子父容器的高度就还是它里面的列没有设定padding-bottom时的高度，
+					当它里面的任 一列高度增加了，则父容器的高度被撑到里面最高那列的高度，
+					其他比这列矮的列会用它们的padding-bottom补偿这部分高度差。</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">5、absolute的containing block(容器块)计算方式跟正常流有什么不同？</p>
+				<p>无论属于哪种，都要先找到其祖先元素中最近的 position 值不为 static 的元素，然后再判断：</p>
+				<ol class="module-body">
+					<li>若此元素为 inline 元素，则 containing block 为能够包含这个元素生成的第一个和最后一个 inline box 的 padding box (除 margin, border 外的区域) 的最小矩形</li>
+					<li>否则,则由这个祖先元素的 padding box 构成。
+	如果都找不到，则为 initial containing block。</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title"> 6、CSS里的visibility属性有个collapse属性值是干嘛用的？在不同浏览器下以后什么区别？</p>
+				<ol class="module-body">
+					<li>对于普通元素visibility:collapse;会将元素完全隐藏,不占据页面布局空间,与display:none;表现相同. 如果目标元素为table,visibility:collapse;将table隐藏,但是会占据页面布局空间. 仅在Firefox下起作用,IE会显示元素,Chrome会将元素隐藏,但是占据空间.</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">7、position跟display、margin collapse、overflow、float这些特性相互叠加后会怎么样？</p>
+				<ol class="module-body">
+					<li>如果元素的display为none,那么元素不被渲染,position,float不起作用,如果元素拥有position:absolute;或者position:fixed;属性那么元素将为绝对定位,float不起作用.</li>
+					<li>如果元素float属性不是none,元素会脱离文档流,根据float属性值来显示.有浮动,绝对定位,inline-block属性的元素,margin不会和垂直方向上的其他元素margin折叠.</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">8、什么是外边距合并？</p>
+				<ol class="module-body">
+					<li>外边距合并指的是，当两个垂直外边距相遇时，它们将形成一个外边距。</li>
+					<li>合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">9、zoom:1的清除浮动原理?</p>
+				<ol class="module-body">
+					<li>清除浮动，触发hasLayout；</li>
+					<li>Zoom属性是IE浏览器的专有属性，它可以设置或检索对象的缩放比例。解决ie下比较奇葩的bug。
+	譬如外边距（margin）的重叠，浮动清除，触发ie的haslayout属性等。</li>
+					<li>来龙去脉大概如下：
+					当设置了zoom的值之后，所设置的元素就会就会扩大或者缩小，高度宽度就会重新计算了，这里一旦改变zoom值时其实也会发生重新渲染，运用这个原理，也就解决了ie下子元素浮动时候父元素不随着自动扩大的问题。</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">10、让页面里的字体变清晰，变细用CSS怎么做？ </p>
+				<ol class="module-body">
+					<li>-webkit-font-smoothing: antialiased;</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">11、CSS优化、提高性能的方法有哪些？</p>
+				<ol class="module-body">
+					<li>关键选择器（key selector）。选择器的最后面的部分为关键选择器（即用来匹配目标元素的部分）；</li>
+					<li>如果规则拥有 ID 选择器作为其关键选择器，则不要为规则增加标签。过滤掉无关的规则（这样样式系统就不会浪费时间去匹配它们了）；</li>
+					<li>提取项目的通用公有样式，增强可复用性，按模块编写组件；增强项目的协同开发性、可维护性和可扩展性;</li>
+					<li>使用预处理工具或构建工具（gulp对css进行语法检查、自动补前缀、打包压缩、自动优雅降级）；</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">12、浏览器是怎样解析CSS选择器的？ </p>
+				<ol class="module-body">
+					<li>样式系统从关键选择器开始匹配，然后左移查找规则选择器的祖先元素。</li>
+					<li>只要选择器的子树一直在工作，样式系统就会持续左移，直到和规则匹配，或者是因为不匹配而放弃该规则。</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">13、margin和padding分别适合什么场景使用？ </p>
+				<ol class="module-body">
+					<li>margin是用来隔开元素与元素的间距；padding是用来隔开元素与内容的间隔。</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">14、让页面里的字体变清晰，变细用CSS怎么做？ </p>
+				<ol class="module-body">
+					<li>-webkit-font-smoothing: antialiased;</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">15、position:fixed;在android下无效怎么处理？ </p>
+				<ol class="module-body">
+					<li>  fixed的元素是相对整个页面固定位置的，你在屏幕上滑动只是在移动这个所谓的viewport，</li>
+					<li>原来的网页还好好的在那，fixed的内容也没有变过位置，</li>
+					<li>
+						<code>
+							<pre>
+							&ltmeta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/&gt
+						</pre>
+						</code>
+					</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">16、display:inline-block 什么时候会显示间隙？ </p>
+				<ol class="module-body">
+					<li>移除空格、使用margin负值、使用font-size:0、letter-spacing、word-spacing</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title"> 17、什么是Cookie 隔离？ </p>
+				<ol class="module-body">
+					<li>如果静态文件都放在主域名下，那静态文件请求的时候都带有的cookie的数据提交给server的，非常浪费流量, 所以不如隔离开。</li>
+					<li>如果静态文件都放在主域名下，那静态文件请求的时候都带有的cookie的数据提交给server的，非常浪费流量，所以不如隔离开。</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">18、style标签写在body后与body前有什么区别？ </p>
+				<ol class="module-body">
+					<li></li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">19、如何修改chrome记住密码后自动填充表单的黄色背景 </p>
+				<ol class="module-body">
+					<li>input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+	    background-color: rgb(250, 255, 189); /* #FAFFBD; */
+	    background-image: none;
+	    color: rgb(0, 0, 0);
+	  }</li>
+				</ol>
+			</div>
+		</div>
+		<p class="jsTitle">JavaScript</p>
+		<div class="module-js">
+			<div class="module">
+				<p class="module-title">1、js的基本数据类型 </p>
+				<ol class="module-body">
+					<li>number、string、boolean、null、underfind</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">2、js有哪些内置对象？ </p>
+				<ol class="module-body">
+					<li>Object 是 JavaScript 中所有对象的父对象</li>
+					<li>数据封装类对象：Object、Number、String、Boolean、Array</li>
+					<li>其他对象：Function、Arguments、Math、Date、RegExp、Error</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">3、JavaScript原型，原型链 ? 有什么特点？ </p>
+				<ol class="module-body">
+					<li>每个对象都会在其内部初始化一个属性，就是prototype(原型)，当我们访问一个对象的属性时，
+	 如果这个对象内部不存在这个属性，那么他就会去prototype里找这个属性，这个prototype又会有自己的prototype，于是就这样一直找下去，也就是我们平时所说的原型链的概念。</li>
+	 				<li>关系：instance.constructor.prototype = instance.__proto__</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">4、eval是做什么的？ </p>
+				<ol class="module-body">
+					<li>它的功能是把对应的字符串解析成JS代码并运行；</li>
+					<li>应该避免使用eval，不安全，非常耗性能（2次，一次解析成js语句，一次执行）</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">5、null，undefined 的区别？ </p>
+				<ol class="module-body">
+					<li>undefined : 用来告诉你缺少某事物。typeof undefined => "undefined".注意：应该只给Javascript使用undefined，而不应该将某值设为undefined，如果想要表示某变数值仍然无法使用，应该使用null。</li>
+					<li>null :  给你知道目前仍然无法使用某（可能会出现的值）。typeof null => object.在验证null时，一定要使用　=== ，因为 == 无法分别 null 和　undefined</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">6、什么是闭包（closure），为什么要用它？ </p>
+				<ol class="module-body">
+					<li>闭包是指有权访问另一个函数作用域中变量的函数，创建闭包的最常见的方式就是在一个函数内创建另一个函数，通过另一个函数访问这个函数的局部变量。</li>
+					<li>闭包的特性：函数内再嵌套函数,内部函数可以引用外层的参数和变量,参数和变量不会被垃圾回收机制回收。</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">7、javascript 代码中的"use strict";是什么意思 ? 用它区别是什么？ </p>
+				<ol class="module-body">
+					<li>use strict是一种ECMAscript 5 添加的（严格）运行模式,这种模式使得 Javascript 在更严格的条件下运行</li>
+					<li>使JS编码更加规范化的模式,消除Javascript语法的一些不合理、不严谨之处，减少一些怪异行为。</li>
+					<li>默认支持的糟糕特性都会被禁用，比如不能用with，也不能在意外的情况下给全局变量赋值</li>
+					<li>全局变量的显示声明,函数必须声明在顶层，不允许在非函数代码块内声明函数,arguments.callee也不允许使用</li>
+					<li>消除代码运行的一些不安全之处，保证代码运行的安全,限制函数中的arguments修改，严格模式下的eval函数的行为和非严格模式的也不相同</li>
+					<li>提高编译器效率，增加运行速度</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">8、new操作符具体干了什么呢? </p>
+				<ol class="module-body">
+					<li>创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型。</li>
+					<li>属性和方法被加入到 this 引用的对象中。</li>
+					<li>新创建的对象由 this 所引用，并且最后隐式的返回 this 。</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">9、JSON 的了解？ </p>
+				<ol class="module-body">
+					<li>JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。</li>
+					<li>它是基于JavaScript的一个子集。数据格式简单, 易于读写, 用带宽小如：{"age":"12", "name":"back"}</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">10、如何解决跨域问题? </p>
+				<ol class="module-body">
+					<li>jsonp、 iframe、window.name、window.postMessage、服务器上设置代理页面</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">11、异步加载JS的方式有哪些？ </p>
+				<ol class="module-body">
+					<li>defer，只支持IE</li>
+					<li>async：</li>
+					<li>创建script，插入到DOM中，加载完毕后callBack</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">12、documen.write和 innerHTML的区别 </p>
+				<ol class="module-body">
+					<li>document.write只能重绘整个页面</li>
+					<li>innerHTML可以重绘页面的一部分</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">13、针对 jQuery 的优化方法？ </p>
+				<ol class="module-body">
+					<li>基于Class的选择性的性能相对于Id选择器开销很大，因为需遍历所有DOM元素。</li>
+					<li>频繁操作的DOM，先缓存起来再操作。用Jquery的链式调用更好。比如：var str=$("a").attr("href");</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">14、如何判断当前脚本运行在浏览器还是node环境中？（阿里） </p>
+				<ol class="module-body">
+					<li>通过判断Global对象是否为window，如果不为window，当前脚本没有运行在浏览器中</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">15、哪些操作会造成内存泄漏？ </p>
+				<ol class="module-body">
+					<li>内存泄漏指任何对象在您不再拥有或需要它之后仍然存在。</li>
+					<li>垃圾回收器定期扫描对象，并计算引用了每个对象的其他对象的数量。如果一个对象的引用数量为 0（没有其他对象引用过该对象），或对该对象的惟一引用是循环的，那么该对象的内存即可回收。</li>
+					<li>setTimeout 的第一个参数使用字符串而非函数的话，会引发内存泄漏。</li>
+					<li>闭包、控制台日志、循环（在两个对象彼此引用且彼此保留时，就会产生一个循环）</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">17、JQuery一个对象可以同时绑定多个事件，这是如何实现的？ </p>
+				<ol class="module-body">
+					<li>多个事件同一个函数：$("div").on("click mouseover", function(){});</li>
+					<li>多个事件不同函数:$("div").on({
+			 		click: function(){},
+			 		mouseover: function(){}
+			 	});</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">18、.call() 和 .apply() 的区别？ </p>
+				<ol class="module-body">
+					<li> 例子中用 add 来替换 sub，add.call(sub,3,1) == add(3,1) ，所以运行结果为：alert(4);
+					注意：js 中的函数其实是对象，函数名是对 Function 对象的引用。
+
+				 	function add(a,b)
+				 	{
+				 	    alert(a+b);
+				 	}
+
+				 	function sub(a,b)
+				 	{
+				 	    alert(a-b);
+				 	}
+
+				 	add.call(sub,3,1);</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">19、DOM操作——怎样添加、移除、移动、复制、创建和查找节点? </p>
+				<ol class="module-body">
+					<li>创建新节点
+	    createDocumentFragment()    //创建一个DOM片段
+	    createElement()   //创建一个具体的元素
+	    createTextNode()   //创建一个文本节点</li>
+	    			<li>添加、移除、替换、插入
+	    appendChild()
+	    removeChild()
+	    replaceChild()
+	    insertBefore() //在已有的子节点前插入一个新的子节点</li>
+	    			<li>查找
+	    getElementsByTagName()    //通过标签名称
+	    getElementsByName()    //通过元素的Name属性的值(IE容错能力较强，会得到一个数组，其中包括id等于name值的)
+	    getElementById()    //通过元素Id，唯一性</li>
+				</ol>
+			</div>
+			<div class="module">
+				<p class="module-title">20、AMD（Modules/Asynchronous-Definition）、CMD（Common Module Definition）规范区别？ </p>
+				<ol class="module-body">
+					<li>Asynchronous Module Definition，异步模块定义，所有的模块将被异步加载，模块加载不影响后面语句运行。所有依赖某些模块的语句均放置在回调函数中。</li>
+					<li>区别：<p>1)、对于依赖的模块，AMD 是提前执行，CMD 是延迟执行。不过 RequireJS 从 2.0 开始，也改成可以延迟执行（根据写法不同，处理方式不同）。CMD 推崇 as lazy as possible.</p>
+					<p>2)、CMD 推崇依赖就近，AMD 推崇依赖前置</p></li>
+				</ol>
+			</div>
+		</div>		
+	</div>
+</body>
+</html>

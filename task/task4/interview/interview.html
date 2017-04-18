@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>面试题</title>   
+        <link href="bootstrap.min.css" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">        
+
+    </head>
+    <body>
+    <div class="container">
+        <div class="row">
+            <h1 class="middle col-lg-12">前端面试题</h1>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="panel panel-primary ">
+                <p class="question panel-heading">1.对WEB标准以及W3C的理解与认识</p>
+                <p class="answer panel-body">
+                    标签闭合、标签小写、不乱嵌套、提高搜索机器人搜索几率、使用外链css和js脚本、结构行为表现的分离、文件下载与页面速度更快、内容能被更多的用户所访问、内容能被更广泛的设备所访问、更少的代码和组件，容易维护、改版方便，不需要变动页面内容、提供打印版本而不需要复制内容、提高网站易用性;
+                </p>
+                </div>
+               
+                <div class="panel panel-primary ">
+                <p class="question panel-heading"> 2.xhtml和html有什么区别</p>
+                <p class="answer panel-body">
+                    HTML是一种基本的WEB网页设计语言，XHTML是一个基于XML的置标语言
+                    最主要的不同：
+                    XHTML 元素必须被正确地嵌套。
+                    XHTML 元素必须被关闭。
+                    标签名必须用小写字母。
+                    XHTML 文档必须拥有根元素。
+                </p>
+                </div>
+                <div class="panel panel-primary ">
+                <p class="question panel-heading">3.Doctype作用? 严格模式与混杂模式如何区分？它们有何意义?</p>
+                <p class="answer panel-body">
+                    （1）、<!DOCTYPE> 声明位于文档中的最前面，处于 <html> 标签之前。告知浏览器的解析器，      用什么文档类型 规范来解析这个文档。 （2）、严格模式的排版和 JS 运作模式是  以该浏览器支持的最高标准运行。（3）、在混杂模式中，页面以宽松的向后兼容的方式显示。模拟老式浏览器的行为以防止站点无法工作。（4）、DOCTYPE不存在或格式不正确会导致文档以混杂模式呈现。
+                </p>
+                </div>
+                <div class="panel panel-success ">
+                <p class="question panel-heading">4.行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？</p>
+                <p class="answer panel-body">
+                    （1）CSS规范规定，每个元素都有display属性，确定该元素的类型，每个元素都有默认的display值，  比如div默认display属性值为“block”，成为“块级”元素；  span默认display属性值为“inline”，是“行内”元素。  （2）行内元素有：a b span img input select strong（强调的语气）  块级元素有：div ul ol li dl dt dd h1 h2 h3 h4…p  （3）知名的空元素： br、hr、img、input、link、meta、鲜为人知的是：area、base、col、command、embed、keygen、param、source、track、wbr
+                </p>
+                </div>
+                <div class="panel panel-info ">
+                <p class="question panel-heading">5.link 和@import 的区别是？</p>
+                <p class="answer panel-body">
+                    link 和@import 的区别是？
+                    （1）link属于XHTML标签，而@import是CSS提供的;（2）页面被加载的时，link会同时被加载，而@import引用的CSS会等到页面被加载完再加载;（3）import只在IE5以上才能识别，而link是XHTML标签，无兼容问题;（4）link方式的样式的权重 高于@import的权重.
+                </p>
+                </div>
+                <div class="panel panel-warning ">
+                <p class="question panel-heading">6.清除浮动的几种方式，各自的优缺点</p>
+                <p class="answer panel-body">
+                   1.使用空标签清除浮动 clear:both(理论上能清楚任何标签，增加无意义的标签)
+　　2.使用overflow:auto(空标签元素清除浮动而不得不增加无意代码的弊端,使用zoom:1用于兼容IE)
+　　3.是用afert伪元素清除浮动(用于非IE浏览器)
+                </p>
+                </div>
+                <div class="panel panel-warning ">
+                <p class="question panel-heading">7.浏览器的内核分别是什么?</p>
+                <p class="answer panel-body">
+                    * IE浏览器的内核Trident、Mozilla的Gecko、Chrome的Blink（WebKit的分支）、Opera内核原为Presto，现为Blink；
+                </p>
+                </div>
+                <div class="panel panel-warning ">
+                <p class="question panel-heading">8.如何处理HTML5新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？</p>
+                <p class="answer panel-body">
+                    支持HTML5新标签：* IE8/IE7/IE6支持通过document.createElement方法产生的标签，  可以利用这一特性让这些浏览器支持HTML5新标签，  浏览器支持新标签后，还需要添加标签默认的样式：* 当然最好的方式是直接使用成熟的框架、使用最多的是html5shim框架   [if lt IE 9]>    <script> src="http://html5shim.googlecode.com/svn/trunk/html5.js"</script>    ![endif]-- 如何区分： DOCTYPE声明/新增的结构元素/功能元素
+                </p>
+                </div>
+                <div class="panel panel-warning ">
+                <p class="question panel-heading">9.语义化的理解？</p>
+                <p class="answer panel-body">
+                  用正确的标签做正确的事情！html语义化就是让页面的内容结构化，便于对浏览器、搜索引擎解析；在没有样式CCS情况下也以一种文档格式显示，并且是容易阅读的。搜索引擎的爬虫依赖于标记来确定上下文和各个关键字的权重，利于 SEO。使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。
+                </p>
+                </div>
+                <div class="panel panel-warning ">
+                <p class="question panel-heading">10.介绍一下CSS的盒子模型？</p>
+                <p class="answer panel-body">
+                   （1）有两种， IE 盒子模型、标准 W3C 盒子模型；IE的content部分包含了 border 和 pading;（2）盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border).
+                </p>
+                </div>
+                <div class="panel panel-warning ">
+                <p class="question panel-heading">11.CSS3有哪些新特性？</p>
+                <p class="answer panel-body">
+                  CSS3实现圆角（border-radius:8px），阴影（box-shadow:10px），  对文字加特效（text-shadow、），线性渐变（gradient），旋转（transform）  transform:rotate(9deg) scale(0.85,0.90) translate(0px,-30px) skew(-9deg,0deg);//旋转,缩放,定位,倾斜  增加了更多的CSS选择器  多背景 rgba 
+                </p>
+                </div>
+                <div class="panel panel-danger ">
+                <p class="question panel-heading">12.写出几种IE6 BUG的解决方法</p>
+                <p class="answer panel-body">
+                    1.双边距BUG float引起的 使用display
+                    2.3像素问题 使用float引起的 使用dislpay:inline -3px
+                    3.超链接hover 点击后失效 使用正确的书写顺序 link visited hover active
+                    4.Ie z-index问题 给父级添加position:relative
+                    5.Png 透明 使用js代码 改
+                    6.Min-height 最小高度 !Important 解决’
+                    7.select 在ie6下遮盖 使用iframe嵌套
+                    8.为什么没有办法定义1px左右的宽度容器(IE6默认的行高造成的，使用over:hidden,zoom:0.08 line-height:1px)
+                    9.ie 6 不支持!important
+                </p>
+                </div>
+            </div>
+        </div>
+        
+    </div>     
+    </body>
+</html>

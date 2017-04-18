@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>计算器</title>   
+        <link type="text/css" href="style.css" rel="stylesheet">        
+
+    </head>
+    <body>
+    <div class="wrap">
+        <div class="text-result">
+            <input type="text" id="txtScream" readonly="readonly" />
+        </div>
+        <div class="line">
+            <input type="button" value="log" onclick="control2('log')" />
+            <input type="button" value="sqrt" onclick="control2('sqrt')" />
+            <input type="button" value="1/x"/ onclick="control2('denominator')">
+            <input type="button" value="AC" onclick="clearAC()" />
+        </div>
+        <div class="line">
+            <input type="button" value="sin" onclick="control2('sin')"/>
+            <input type="button" value="cos" onclick="control2('cos')"/>
+            <input type="button" value="tan" onclick="control2('tan')" />
+            <input type="button" value="π" onclick="control2('π')" />
+            <input type="button" value="." onclick="inputnumber('.')"/>
+
+        </div>
+        <div class="line">
+            <input type="button" value="7" onclick="inputnumber(7)" />
+            <input type="button" value="8" onclick="inputnumber(8)"/>
+            <input type="button" value="9" onclick="inputnumber(9)"/>
+            <input type="button" value="-" onclick="control('-')" />
+            <input type="button" value="+" onclick="control('+')" />
+        </div>
+        <div class="line">
+            <input type="button" value="4" onclick="inputnumber(4)"/>
+            <input type="button" value="5" onclick="inputnumber(5)"/>
+            <input type="button" value="6" onclick="inputnumber(6)"/>
+            <input type="button" value="*" onclick="control('*')"/>
+            <input type="button" value="/" onclick="control('/')"/>
+        </div>
+        <div class="line">
+            <input type="button" value="1" onclick="inputnumber(1)"/>
+            <input type="button" value="2" onclick="inputnumber(2)"/>
+            <input type="button" value="3" onclick="inputnumber(3)"/>
+            <input type="button" value="0" onclick="inputnumber(0)"/>
+            <input type="button" value="=" onclick="equal()" />
+        </div>
+    </div>
+    <script type="text/javascript" src="style.js"></script>
+    </body>
+</html>

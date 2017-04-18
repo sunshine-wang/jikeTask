@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>对象和数组</title>
+</head>
+<body>
+<div>
+	
+</div>
+<script type="text/javascript">
+	var data=['a','x','b','d','m','a','k','m','p','j','a'];
+	var obj={};
+	var result="";
+	var lengthOfResult=0;
+	for(var i in data){
+		if (!obj[data[i]]) {
+			obj[data[i]]={};
+			obj[data[i]].indexarr=[];
+		}
+		obj[data[i]].indexarr.push(i);
+		if (lengthOfResult<obj[data[i]].indexarr.length) {
+			result=data[i]
+			lengthOfResult=obj[data[i]].indexarr.length;
+		}
+	}
+	alert("出现次数对多的字母为"+result);
+	alert("出现的次数有"+obj[result].indexarr.length);
+	var index_str="";
+	for(var i in obj[result]){
+		index_str+=obj[result][i]+" ";
+	};
+	alert("出现的位置是"+index_str);
+</script>
+</body>
+</html>

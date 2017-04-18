@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, user-scalable=0, minimal-ui">
+	<title>admin后台</title>
+	<link rel="stylesheet" type="text/css" href="./css/admin.css">
+</head>
+<body>
+<div>
+	<form class="new_form">
+		<div class="form_list">
+			<label>新闻类型</label>
+			<!-- <input type="text"/> -->
+			<select id="newtype" class="newstype">
+				<option value="0">推荐</option>
+				<option value="1">百家</option>
+				<option value="2">本地</option>
+				<option value="3">图片</option>
+				<option value="4">娱乐</option>
+				<option value="5">社会</option>
+				<option value="6">军事</option>
+				<option value="7">互联网</option>
+				<option value="8">科技</option>
+				<option value="9">女人</option>
+				<option value="10">更多</option>
+			</select>
+		</div>
+		<div class="form_list">
+			<label>新闻标题</label>
+			<input type="text"/>
+		</div>
+		<div class="form_list">
+			<label>新闻图片</label>
+			<input type="text"/>
+		</div>
+		<div class="form_list">
+			<label>新闻内容</label>
+			<input type="text"/>
+		</div>
+		<div class="form_list">
+			<label>新闻时间</label>
+			<input type="date"/>
+		</div>
+		<div class="form_list">
+			<input type="button" class="sub" id="new_sub" value="提交"/>
+		</div>
+	</form>
+	<ul id="news_add" class="getnews">
+	</ul>
+</div>
+<div id="news_hide" class="news_hide">
+	<form class="new_form">
+		<div class="form_list">
+			<label>新闻类型</label>
+			<!-- <input type="text"/> -->
+			<select class="newstype" id="checkout_type">
+				<option value="0">推荐</option>
+				<option value="1">百家</option>
+				<option value="2">本地</option>
+				<option value="3">图片</option>
+				<option value="4">娱乐</option>
+				<option value="5">社会</option>
+				<option value="6">军事</option>
+				<option value="7">互联网</option>
+				<option value="8">科技</option>
+				<option value="9">女人</option>
+				<option value="10">更多</option>
+			</select>
+		</div>
+		<div class="form_list">
+			<label>新闻标题</label>
+			<input type="text"/>
+		</div>
+		<div class="form_list">
+			<label>新闻图片</label>
+			<input type="text"/>
+		</div>
+		<div class="form_list">
+			<label>新闻内容</label>
+			<input type="text"/>
+		</div>
+		<div class="form_list">
+			<label>新闻时间</label>
+			<input type="date"/>
+		</div>
+		<div class="form_list">
+			<input type="button" class="sub" id="new_update" value="提交"/>
+		</div>
+	</form>
+</div>
+
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/admin.js"></script>
+</body>
+</html>

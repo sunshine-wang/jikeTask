@@ -1,0 +1,16 @@
+*{margin: 0;padding: 0;}
+.wrap{width: 100%;height:100%;overflow: hidden;}
+li{display:inline;float: left;padding:0px 10px;}
+a{color: black;font-size: 14px;}
+.nav{position:absolute;right:10px;clear: both;width:440px;height: 50px;line-height: 50px;}
+.nav a:hover{color: blue;}
+.baidu_img{text-align: center;margin-top: 70px;}
+.sou{margin: 0 auto;width: 645px;height: 35px;clear: both;margin-top: 20px;}
+.sousuo,.sub{display: block;}
+.sousuo{float: left;width:543px;height: 35px;border: 1px solid gray;}
+.sub{float: left;width: 100px;height: 37px;color:white;background-color:#3385ff;border: 0px;}
+.sub:hover{background-color: #317ef3;}
+.center_d{text-align: center;margin-top: 280px;}
+.center_d a{color:blue;font-size: 12px;padding: 0 5;}
+.footer{text-align: center;margin-top: 10px;}
+.footer span,.footer a {color:gray;font-size: 12px;}

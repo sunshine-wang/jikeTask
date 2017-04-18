@@ -1,0 +1,238 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.magic{
+	margin: 300px;
+	-webkit-transform-style:preserve-3d;
+	-webkit-animation:rotate 5s ease-in-out 0 infinite;
+	-webkit-transform-origin:150px 150px 0;
+}
+ @-webkit-keyframes rotate {
+        from { -webkit-transform: rotateY(0deg) rotateX(0deg);
+          -ms-transform: rotateY(0deg) rotateX(0deg);
+          -o-transform: rotateY(0deg) rotateX(0deg);
+          transform: rotateY(0deg) rotateX(0deg);
+        }
+        to {
+          -webkit-transform: rotateY(360deg) rotateX(360deg);
+          -ms-transform: rotateY(360deg) rotateX(360deg);
+          -o-transform: rotateY(360deg) rotateX(360deg);
+          transform: rotateY(360deg) rotateX(360deg);
+        }
+      }
+      @-webkit-keyframes rotate-side {
+        from {
+          -webkit-transform: rotateZ(0deg);
+        }
+        to {
+          -webkit-transform: rotateZ(360deg);
+        }
+      }
+.first{-webkit-transform-style:preserve-3d;}
+.third{-webkit-transform-style:preserve-3d;}
+.box{-webkit-transform-style:preserve-3d;}
+.block{
+	-webkit-transform-style:preserve-3d;
+	position: relative;
+}
+.side{
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	text-align: center;
+	line-height: 100px;
+	border-radius: 20px;
+	border: 1px solid;
+}
+.front{
+	background: blue;
+	-webkit-transform:translateZ(100px);
+}
+.back{
+	background: orange;
+	-webkit-transform:translateZ(-100px);
+}
+.left{
+	background: pink;
+	-webkit-transform:
+	rotateY(-90deg)
+	translateZ(100px);
+}
+.right{
+	background: purple;
+	-webkit-transform:
+	rotateY(90deg)
+	translateZ(100px);
+}
+.top{
+	background: gray;
+	-webkit-transform:
+	rotateX(90deg)
+	translateZ(100px);
+}.bottom{
+	background: yellow;
+	-webkit-transform:
+	rotateX(-90deg)
+	translateZ(100px);
+}
+.m_1{
+	position: absolute;
+	-webkit-transform:
+	translateX(-200px)
+	translateY(-200px);
+}
+.m_2{
+	position: absolute;
+	-webkit-transform:
+	translateY(-200px)
+}
+.m_3{
+	position: absolute;
+	-webkit-transform:
+	translateX(200px)
+	translateY(-200px);
+}
+.m_4{
+	position: absolute;
+	-webkit-transform:
+	translateX(-200px);
+}
+.m_5{
+	position: absolute;
+}
+.m_6{
+	position: absolute;
+	-webkit-transform:
+	translateX(200px)
+}
+.m_7{
+	position: absolute;
+	-webkit-transform:
+	translateX(-200px)
+	translateY(200px);
+}
+.m_8{
+	position: absolute;
+	-webkit-transform:
+	translateY(200px);
+}
+.m_9{
+	position: absolute;
+	-webkit-transform:
+	translateY(200px)
+	translateX(200px);
+}
+.f_1{
+	position: absolute;
+	-webkit-transform:
+	translateX(-200px)
+	translateY(-200px)
+	translateZ(200px);
+}
+.f_2{
+	position: absolute;
+	-webkit-transform:
+	translateY(-200px)
+	translateZ(200px);
+}
+.f_3{
+	position: absolute;
+	-webkit-transform:
+	translateX(200px)
+	translateY(-200px)
+	translateZ(200px);
+}
+.f_4{
+	position: absolute;
+	-webkit-transform:
+	translateX(-200px)
+	translateZ(200px);
+}
+.f_5{
+	position: absolute;
+	-webkit-transform:
+	translateZ(200px);
+}
+.f_6{
+	position: absolute;
+	-webkit-transform:
+	translateX(200px)
+	translateZ(200px);
+}
+.f_7{
+	position: absolute;
+	-webkit-transform:
+	translateX(-200px)
+	translateY(200px)
+	translateZ(200px);
+}
+.f_8{
+	position: absolute;
+	-webkit-transform:
+	translateY(200px)
+	translateZ(200px);
+}
+.f_9{
+	position: absolute;
+	-webkit-transform:
+	translateY(200px)
+	translateX(200px)
+	translateZ(200px);
+}
+.b_1{
+	position: absolute;
+	-webkit-transform:
+	translateX(-200px)
+	translateY(-200px)
+	translateZ(-200px);
+}
+.b_2{
+	position: absolute;
+	-webkit-transform:
+	translateY(-200px)
+	translateZ(-200px);
+}
+.b_3{
+	position: absolute;
+	-webkit-transform:
+	translateX(200px)
+	translateY(-200px)
+	translateZ(-200px);
+}
+.b_4{
+	position: absolute;
+	-webkit-transform:
+	translateX(-200px)
+	translateZ(-200px);
+}
+.b_5{
+	position: absolute;
+	-webkit-transform:
+	translateZ(-200px);
+}
+.b_6{
+	position: absolute;
+	-webkit-transform:
+	translateX(200px)
+	translateZ(-200px);
+}
+.b_7{
+	position: absolute;
+	-webkit-transform:
+	translateX(-200px)
+	translateY(200px)
+	translateZ(-200px);
+}
+.b_8{
+	position: absolute;
+	-webkit-transform:
+	translateY(200px)
+	translateZ(-200px);
+}
+.b_9{
+	position: absolute;
+	-webkit-transform:
+	translateY(200px)
+	translateX(200px)
+	translateZ(-200px);

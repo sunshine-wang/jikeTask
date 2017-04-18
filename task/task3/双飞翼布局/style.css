@@ -1,0 +1,95 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+}
+.header{
+    height: 100px;
+    background: orange;
+    text-align: center;
+	line-height: 100px;
+}
+.atricle{
+    height: 400px;
+    background: green;
+    overflow: hidden;
+    text-align: center;
+	line-height: 400px;
+}
+.middle{
+	height: 100px;
+	background: pink;
+	float: left;
+	width: 100%;
+	padding-bottom: 9999px;
+	margin-bottom: 9999px;
+}
+.inner{
+	margin-left: 200px;
+	margin-right: 200px;
+}
+.left{
+	width: 200px;
+	height: 100px;
+	background: red;
+	float: left;
+	margin-left:-100%;
+	padding-bottom: 9999px;
+	margin-bottom: 9999px;
+}
+.right{
+	width: 200px;
+	height: 100px;
+	background: purple;
+	float: left;
+	margin-left:-200px; 
+	padding-bottom: 9999px;
+	margin-bottom: 9999px;
+}
+.footer{
+    height: 150px;
+    background: yellow;
+    text-align: center;
+	line-height: 150px;
+}
+/*圣杯布局css*/
+.atricle_grail{
+    height: 400px;
+    background: green;
+    padding-left: 200px;
+    padding-right: 200px;
+    overflow: hidden;
+    text-align: center;
+    line-height: 400px;
+}
+.middle_grail{
+	height: 100px;
+	background: pink;
+	float: left;
+	width: 100%;
+	padding-bottom: 9999px;
+	margin-bottom: 9999px;
+}
+.left_grail{
+	width: 200px;
+	height: 100px;
+	background: red;
+	float: left;
+	margin-left:-100%;
+	position: relative;
+	left: -200px;
+	padding-bottom: 9999px;
+	margin-bottom: 9999px;
+}
+.right_grail{
+	width: 200px;
+	height: 100px;
+	background: purple;
+	float: left;
+	margin-left:-200px; 
+	position: relative;;
+    left:200px;
+    padding-bottom: 9999px;
+	margin-bottom: 9999px;
+
+}

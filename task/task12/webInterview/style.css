@@ -1,0 +1,41 @@
+*{
+	margin:0;
+	padding: 0;
+}
+.content{
+	padding: 20px;
+}
+.module{
+	border:1px solid #ddd;
+	padding:20px;
+	margin-bottom: 20px;
+}
+.module-title{
+	line-height: 30px;
+	padding-left: 10px;
+	background-color: #7CBBC5;
+	color: #fff;
+	font-size: 16px;
+}
+.module-css .module-title{
+	background-color: #ff6566;
+}
+.module-js .module-title{
+	background-color: #ffc965;
+}
+.module-body{
+	padding-left: 40px;
+}
+.module-body li{
+	line-height: 25px;
+	font-size: 14px;
+}
+.htmlTitle{
+	color: #7CBBC5;
+}
+.cssTitle{
+	color: #ff6566;
+}
+.jsTitle{
+	color: #ffc965;
+}
